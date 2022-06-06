@@ -1,0 +1,132 @@
+
+
+@media(min-width: 1024px) and (max-width: 1240px) {
+    *{}
+
+a.header__top-cart-link {width: 73px;margin-top: 5px;}
+
+i.fa.fa-shopping-cart.header__top-cart-icon {}
+
+.grird {width: 984px;}
+    .grid {width: 984px;}
+   
+    }
+
+
+@media(max-width: 1023px) {
+*{}
+
+.grird {width: 644px;}
+
+.product-item-wrap {width: calc(100% / 3);}
+
+.header__top-cart {justify-content: center;}
+
+.category__head {text-align: center;}
+
+.category {}
+
+.categories {}
+
+img.category-img {width: 80%;}
+
+img.main__product-img {width: 100%;}
+
+a.main__product {width: calc(100% /3);}
+
+body {}
+img.header__top-account-user-img {
+    width: 24px;
+    cursor: pointer;
+}
+.header__top-account {
+    width: 70;
+    text-align: right;
+}
+
+.header__top-search {width: 355px;}
+
+.header__top-cart-text {display: none;}
+
+.header__top-account-auth {display: none;}
+
+.header__top-account {width: 70px;}
+
+.header__top-search {width: 420px;}
+
+.header__top-logo {width: 130px;}
+
+.header__top-content {}
+
+
+
+}
+
+
+@media(min-width: 740px) and (max-width: 1023px){
+    *{
+        
+    }
+
+img.main__product-img {width: 150px;height: 150px;}
+    .grid {width: 644px;}
+}
+
+
+@media(max-width:739px){
+    *{}
+
+.product-item-wrap {width: calc(100% / 2);}
+
+body {}
+
+li.footer__item {font-size: 10px;}
+
+.footer__head {font-size: 12px;}
+
+.footer_wrap {}
+
+a.main__product {width: calc(100% / 2);}
+
+.main {width: 100%;margin-top: -40px;}
+
+.categories {display: none;}
+
+.header__top {height: 60px;}
+
+.header__nav {height: 60px;}
+
+button.header__nav-search-on-mobile-btn {width: 46px;font-size: 26px;color: var(--orange-color);}
+
+input.header__nav-search-on-mobile-input {width: 85%;height: 100%;}
+
+.header__nav-search-on-mobile {height: 40px;width: 100%;display: flex;justify-content: center;}
+
+.header__nav-content {display: none;}
+
+a.header__top-logo-link {margin-left: 28px;}
+
+a.header__top-home-on-mobile-link {font-size: 34px;color: var(--white-color);display: block;margin-left: 14px;}
+
+img.header__top-account-user-img {margin: 0px;}
+
+
+
+.header__top-account {width: 10%;text-align: right;}
+
+.header__top-home-on-mobile {width: 10%;}
+
+.header__top-logo {width: 70%;text-align: center;}
+
+.header__top-search {display: none;}
+    .grid{
+        width: 100%;
+    }
+    
+}
+
+
+
+
+
+
