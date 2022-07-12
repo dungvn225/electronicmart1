@@ -1,4 +1,6 @@
-import React from 'react'
+import React,{useState} from 'react'
+import {useDispatch} from 'react-redux';
+import {actFetProductCatalogyRequest} from './../Actions/index';
 import h1 from './../Assets/images/h1.png';
 import h2 from './../Assets/images/h2.png';
 import h3 from './../Assets/images/h3.png';
@@ -9,54 +11,57 @@ import h7 from './../Assets/images/h7.png';
 import h8 from './../Assets/images/h8.png';
 import h9 from './../Assets/images/h9.png';
 
+
+
 export default function Categories() {
+  const dispatch=useDispatch();
+  const [Categoies,setCategoies]=useState([
+    {id:1,
+     name:'Điện thoại',
+    img:h1
+    },
+    {id:2,
+      name:'Laptop',
+     img:h2
+     },
+     {id:3,
+      name:'Tablet',
+     img:h3
+     },
+     {id:4,
+      name:'Phụ kiện',
+     img:h4
+     },
+     {id:5,
+      name:'Điện gia dụng',
+     img:h5
+     },
+     {id:6,
+      name:'Điều hòa - máy lạnh',
+     img:h6
+     },
+    
+     {id:7,
+      name:'Ti vi - âm thanh',
+     img:h7
+     }
+    
+  ]);
+    
   return (
     <div className="categories">
       <div className="category">   {/* category */}
         <div className="category__head">Danh mục sản phẩm</div>
         <ul className="category__list">
-          <li className="category__item">
-            <a   className="category__link">
-              <img src={h1} alt="" className="category__link-img" />
-              <span className="category__link-text">Điện thoại</span>
-            </a>
-          </li>
-          <li className="category__item">
-            <a   className="category__link">
-              <img src={h2} alt="" className="category__link-img" />
-              <span className="category__link-text">Laptop</span>
-            </a>
-          </li>
-          <li className="category__item">
-            <a   className="category__link">
-              <img src={h3} alt="" className="category__link-img" />
-              <span className="category__link-text">Tablet</span>
-            </a>
-          </li>
-          <li className="category__item">
-            <a   className="category__link">
-              <img src={h4} alt="" className="category__link-img" />
-              <span className="category__link-text">Phụ kiện</span>
-            </a>
-          </li>
-          <li className="category__item">
-            <a   className="category__link">
-              <img src={h5} alt="" className="category__link-img" />
-              <span className="category__link-text">Điện gia dụng</span>
-            </a>
-          </li>
-          <li className="category__item">
-            <a   className="category__link">
-              <img src={h6} alt="" className="category__link-img" />
-              <span className="category__link-text">Điều hòa - máy lạnh</span>
-            </a>
-          </li>
-          <li className="category__item">
-            <a   className="category__link">
-              <img src={h7} alt="" className="category__link-img" />
-              <span className="category__link-text">Ti vi - âm thanh</span>
-            </a>
-          </li>
+        {Categoies.map((item,index)=>{
+              return <li className="category__item" key={index}  onClick={()=>{dispatch(actFetProductCatalogyRequest(item))}} >
+              <a   className="category__link">
+                <img src={item.img} alt="" className="category__link-img" />
+                <span className="category__link-text">{item.name}</span>
+              </a>
+            </li>
+           })}
+        
           <li className="category__item">
             <a   className="category__link">
               <img src={h8} alt="" className="category__link-img" />

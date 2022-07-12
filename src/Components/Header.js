@@ -1,14 +1,15 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import imgUser from './../Assets/images/user.png';
 import imgLogo from './../Assets/images/logo.png';
+import { actProductRequest ,actSearchProductRequest} from '../Actions/index';
 export default function Header() {
             
    const dispatch=useDispatch();
    const products=useSelector(state=>state.Products);
    const cart=useSelector(state=>state.Cart);
-
+   const inputEl = useRef('');
    const showTotal=()=>{
   
         let total=0;
@@ -30,12 +31,12 @@ export default function Header() {
           </div>
           <div className="header__top-logo">
             <div   className="header__top-logo-link">
-              <Link to='/electronicmart'>  <img src={imgLogo} alt="" className="header__top-logo-img " />    </Link>
+              <Link to='/electronicmart' onClick={()=>{ dispatch(actProductRequest())}}>  <img src={imgLogo} alt="" className="header__top-logo-img " />    </Link>
             </div>	
           </div>
           <div className="header__top-search">
-            <input type="text" className="header__top-search-input" />
-            <button className="header__top-search-btn-input">
+            <input type="text" className="header__top-search-input"    onChange={(e)=>{inputEl.current= e.target.value}} />
+            <button className="header__top-search-btn-input"  onClick={()=>{dispatch(actSearchProductRequest(inputEl.current.toUpperCase()))}}>
               <i className="fa fa-search header__top-search-btn-input-icon" />
             </button>
           </div>
@@ -122,7 +123,7 @@ export default function Header() {
         <div className="header__nav-content">
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <a   className="header__nav-link">Trang chủ</a>
+              <a   className="header__nav-link" onClick={()=>{dispatch(actProductRequest())}}>Trang chủ</a>
             </li>
             <li className="header__nav-item">
               <a   className="header__nav-link">Giới thiệu</a>
